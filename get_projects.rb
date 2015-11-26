@@ -3,11 +3,14 @@ require 'json'
 
 all_repos = []
 
-for i in 31..35
-  repos = `curl https://api.github.com/search/repositories?q=language:Coq&sort=updated&order=desc&page=#{i}`
+for i in 1..34
+  request = "curl 'https://api.github.com/search/repositories?q=language:Coq&page=#{i}'"
+  puts request
+  repos = `#{request}`
   all_repos += JSON.parse(repos)["items"]
+  sleep(7) # Because there is a maximum of 10 requests per minutes.
 end
 
-File.open("projects4.json", "w") do |f|
+File.open("projects.json", "w") do |f|
   f << JSON.generate(all_repos)
 end
