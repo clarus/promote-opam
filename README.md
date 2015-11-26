@@ -1,2 +1,2 @@
-# promote-opam
-Promote OPAM for the existing GitHub projects.
+# Promote OPAM
+> Promote OPAM for the existing GitHub projects.
