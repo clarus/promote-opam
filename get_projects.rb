@@ -1,3 +1,4 @@
+# Get the JSON list of projects.
 require 'json'
 
 all_repos = []
