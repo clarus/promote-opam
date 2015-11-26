@@ -8,6 +8,6 @@ for i in 31..35
   all_repos += JSON.parse(repos)["items"]
 end
 
-File.open("repos4.json", "w") do |f|
+File.open("projects4.json", "w") do |f|
   f << JSON.generate(all_repos)
 end
